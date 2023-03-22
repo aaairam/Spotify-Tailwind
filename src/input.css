@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base{
+    .container{
+        width: 100%;
+        max-width: 10rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+} */
+
+.container{
+    width: 100%;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+@layer components{
+    .toggle_menu span{
+        width: 2rem;
+        height: .2rem;
+        background-color: white;
+        display: block;
+        border-radius: 3rem;
+        translate: .5 ease;
+    }
+    .toggle_menu span:nth-child(2){
+        margin: .2rem 0;
+    }
+
+    .toggle_menu.open span:first-child{
+        @apply translate-x-0 translate-y-[10px] rotate-[225deg] ease-out duration-[.5s];
+    }
+
+    .toggle_menu.open span:nth-child(2){
+        @apply opacity-0;
+    }
+
+    .toggle_menu.open span:last-child{
+        @apply translate-x-0 translate-y-[-3px] rotate-[-225deg] ease-out duration-[.5s];
+    }
+
+    .header_nav ul{
+        @apply absolute bg-dark right-0 top-0 w-0 h-0 overflow-hidden p-0 z-[1] lg:static lg:w-full lg:h-auto;
+    }
+    .header_nav ul li:not(:first-child), .header_nav ul li:not(:last-child){
+        @apply mx-[1rem];
+    }
+
+    .header_nav ul.open{
+        @apply absolute  w-[85%] h-[100vh] p-[2rem];
+    }
+
+    .lovely.open{
+        @apply w-full;
+    }
+
+    .btn{
+        @apply inline-block py-[.5rem] px-[1rem];
+    }
+
+    .ul__links {
+        @apply max-h-[0] overflow-hidden ease-in duration-[.5s] pt-5
+    }
+
+    .ul__links{
+        @apply lg:block lg:max-h-[25rem]
+    }
+   
+    .ul__links.open {
+        @apply max-h-[25rem] w-[100%] ease-in duration-[.5s]
+    }
+
+    .ul__links ul li {
+        @apply pb-2 text-[white] 
+    }
+
+    .ul__links ul li:hover{
+        @apply text-[green]
+    }
+    
+    .title h5{
+        @apply opacity-[.5]
+    }
+
+    .footer__icons{
+        @apply text-[white] text-[2rem] ml-[1rem] mt-3
+    }
+    .footer__icons i{
+        @apply pr-5
+    }
+
+    .footer__icons i {
+        @apply hover:text-[#3bd83b]
+    }
+
+    .terms__links ul li{
+        @apply hover:text-[green]
+    }
+}
+
+.burger__btn span{
+    border-radius: 1rem;
+    width: 1.5rem;
+    height: .2rem;
+    background-color: white;
+    display: block;
+    margin-right: 1rem;
+    transition: .5s ease
+}
+
+.burger__btn span:nth-child(2){
+    @apply my-1
+}
+
+.burger__btn.open span:first-child{
+    @apply translate-x-0 translate-y-[9px] rotate-[225deg] ease-out duration-[.5s];
+}
+
+.burger__btn.open span:nth-child(2){
+     @apply opacity-0;
+}
+.burger__btn.open span:last-child{
+    @apply translate-x-0 translate-y-[-5px] rotate-[-225deg] ease-out duration-[.5s];
+}
+
+.navigation ul li {
+    @apply p-[2rem] border-[.1rem] border-[grey] hover:text-[green] cursor-pointer
+}
+
+.docsOverview_Content {
+    @apply p-0 hover:text-green border-none
+}
+
+.navigation{
+    @apply ease-in duration-[.5s]
+}
+
+.navigation.open{
+    @apply block ease-in duration-[.5s]
+}
+
+.logo{
+    @apply hover:opacity-[.9] text-center
+}
+
+.drop__item{
+    @apply py-[1rem]
+}
+.drop__item ul li{
+    @apply py-[.5rem]
+}
+.drop__item h4{
+    @apply text-[#ffffff] opacity-60
+}
+.drop__item h4 i{
+    @apply lg:hidden
+}
+.drop__item h4 i.open{
+    @apply rotate-[-180deg] ease-in duration-[300ms]
+}
+.drop__item ul li a{
+    @apply text-[#ffffff] hover:text-[#1ED760]
+}
+.drop__item ul{
+    @apply max-h-0 overflow-hidden ml-[2rem] ease-in duration-[300ms] lg:max-h-[25rem] lg:ml-[unset]
+}
+.drop__item ul.open{
+    @apply max-h-[25rem] ease-in duration-[300ms]
+}
+.drop__item ul li{
+    @apply p-[1rem]  lg:px-[unset]
+}
+.soc__icon ul a{
+    @apply flex justify-center items-center w-[3rem] h-[3rem] mr-[1rem] rounded-full bg-[#222326] cursor-pointer my-[3rem] lg:my-[unset]
+}
+
+.soc__icon ul i{
+    @apply text-white hover:text-green text-[1.5rem]
+}
+.legal ul li{
+    @apply mr-[2rem]
+}
+.legal ul li a{
+    @apply text-[#8F8F8F] text-[10px] leading-[2rem] hover:text-green lg:text-[12px]
+}
+.docs:hover .docsContent{
+    @apply h-[20rem] ease-in duration-[300ms]
+}
+
+.community:hover .communityContents{
+    @apply h-[10rem] ease-in duration-[300ms]
+}
+.use:hover .useContents{
+    @apply h-[15rem] ease-in duration-[300ms]
+}
+
+.active{
+    @apply border-b-2 border-green
+}
+
